@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO LIST</title>
+    <link rel="stylesheet" href="C2.CSS">
+</head>
+
+<body style="background-color: #222;">
+    <div class="container">
+        <h1>TO-DO LIST</h1>
+        <label for="To-Do list" style="color: brown;">Welcome</label>
+        <div class="input holder">
+            <input type="text" id="taskinput" placeholder="write your work Here...">
+            <button id="addTaskBtn">Add Task</button>
+            <ul id="taskoutput">
+
+            </ul>
+        </div>
+
+    </div>
+
+
+
+</body>
+<script>
+    const inputholder = document.querySelector('.input.holder')
+    const taskinput = document.querySelector('#taskinput')
+    const addTaskBtn = document.querySelector('#addTaskBtn')
+    const ul = document.querySelector('#taskoutput')
+
+    addTaskBtn.addEventListener('click', function () {
+        const input = taskinput.value
+        if (input === "") {
+            alert("write something!")
+            return;
+        }
+        const li = document.createElement('li')
+        li.innerText = input
+        ul.appendChild(li)
+        taskinput.value = ""    
+        // if ye lgaaya to automatically clear hoga
+
+    })
+</script>
+
+</html>

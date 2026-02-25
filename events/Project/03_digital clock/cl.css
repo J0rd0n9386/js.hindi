@@ -3,78 +3,90 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Courier New', monospace;
 }
 
-/* Full screen gradient background */
+/* Full screen dark background */
 body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #1e1e2f, #2b1055, #000000);
+    background: black;
+    overflow: hidden;
 }
 
-/* Main container */
+/* Matrix-style moving background */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.05) 0px,
+        rgba(0, 255, 0, 0.05) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    animation: scan 5s linear infinite;
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Container */
 body > div {
+    position: relative;
     text-align: center;
-    padding: 40px 60px;
-    border-radius: 20px;
-    backdrop-filter: blur(15px);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 40px rgba(138, 43, 226, 0.4);
+    padding: 50px 70px;
+    border: 2px solid #00ff00;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 
+        0 0 10px #00ff00,
+        0 0 30px #00ff00,
+        inset 0 0 15px #00ff00;
 }
 
 /* Heading */
 h1 {
-    font-size: 28px;
+    color: #00ff00;
+    font-size: 24px;
     margin-bottom: 15px;
-    letter-spacing: 2px;
-    color: #ffffff;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #00ff00;
 }
 
 /* Label */
 label {
-    font-size: 16px;
-    color: #ff00cc;
+    color: #00ff00;
+    font-size: 14px;
 }
 
-/* Clock Styling */
+/* Clock */
 #clock {
     margin-top: 20px;
-    font-size: 48px;
+    font-size: 55px;
+    letter-spacing: 6px;
     font-weight: bold;
-    letter-spacing: 4px;
-    color: #00ffff;
-    padding: 20px 40px;
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow:
-        0 0 10px #00ffff,
-        0 0 20px #00ffff,
-        0 0 40px #00ffff;
-    transition: all 0.3s ease-in-out;
+    color: #00ff00;
+    text-shadow:
+        0 0 5px #00ff00,
+        0 0 15px #00ff00,
+        0 0 30px #00ff00;
+    animation: flicker 1.5s infinite alternate;
 }
 
-/* Glow animation */
-@keyframes glow {
-    0% {
-        box-shadow:
-            0 0 5px #b51369,
-            0 0 15px #b4b8b8;
-    }
-    50% {
-        box-shadow:
-            0 0 20px #b51369,
-            0 0 40px #b51369;
-    }
-    100% {
-        box-shadow:
-            0 0 5px #b51369,
-            0 0 15px #00ffff;
-    }
-}
-
-#clock {
-    animation: glow 2s infinite ease-in-out;
+/* Flicker effect */
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
 }
