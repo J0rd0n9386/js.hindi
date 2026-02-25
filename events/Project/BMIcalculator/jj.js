@@ -3,11 +3,15 @@ const height = document.getElementById('heigh');
 const result = document.getElementById('result');
 const buttons = document.getElementsByClassName('button');
 
+
 Array.from(buttons).forEach(function (button) {
     button.addEventListener('click', function (e) {
         e.preventDefault();
         const h = parseFloat(height.value);
         const w = parseFloat(weight.value);
+        console.log(button);
+
+
 
         if (!h || !w) {
             result.innerHTML = "Please enter valid height and weight";

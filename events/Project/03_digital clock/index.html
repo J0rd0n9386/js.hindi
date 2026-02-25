@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digital clock</title>
+    <link rel="stylesheet" href="cl.css">
+</head>
+
+<body>
+    <div>
+        <h1>YOUR DIGITAL CLOCK</h1>
+        <label for="clock" style="border-radius: 5px; color: rgb(238, 239, 241);">current date and time is :</label>
+        <div id="clock">00:00:00</div>
+        <!-- <button class="btn" style="display: inline-block; background-color: blueviolet; color: aliceblue;">click to see -->
+        <!-- your current time </button> -->
+    </div>
+
+
+</body>
+<script>
+    // const button = document.querySelector('.btn')
+    const clock = document.querySelector('#clock')
+
+    setInterval(function () {
+        const date = new Date()
+        console.log(date.toLocaleString);
+
+        clock.innerHTML = date.toLocaleString()
+    }, 1000)
+</script>
+
+
+
+</html>
+<!-- setInterval() ek JavaScript function hai jo:
+
+👉 Ek function ko baar-baar chalata hai
+👉 Har fix time gap ke baad
+
+🧠 Syntax
+setInterval(function, timeInMilliseconds)
+
+function → jo code repeat hoga
+
+timeInMilliseconds → kitne gap ke baad repeat hoga
+
+1000 ms = 1 second
+
+2000 ms = 2 second
+
+⏰ Tumhara Example
+setInterval(function () {
+    const date = new Date()
+    clock.innerHTML = date.toLocaleTimeString()
+}, 1000) -->
