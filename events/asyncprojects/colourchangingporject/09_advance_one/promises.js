@@ -33,37 +33,37 @@
 // // })
 
 
-// // const promiseFour = new Promise(function(reslove, reject){
-// //     setTimeout(function(){
-// //     let error = true
-// //     if (!error) {
-// //         resolve({username: "Ankit",Email:"royaarayan@gmail.com"})
+// const promiseFour = new Promise(function(reslove, reject){
+//     setTimeout(function(){
+//     let error = true
+//     if (!error) {
+//         resolve({username: "Ankit",Email:"royaarayan@gmail.com"})
         
-// //     }else{
-// //         reject("Something is wrong")
-// //     }  },1000)
-// // })
+//     }else{
+//         reject("Something is wrong")
+//     }  },1000)
+// })
 
-// // const promiseFour = new Promise(function(resolve, reject){
-// //     setTimeout(function(){
-// //         let error = false;  // change here
+// const promiseFour = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = false;  // change here
 
-// //         if (!error) {
-// //             resolve({username: "Ankit", Email:"royaarayan@gmail.com"});
-// //         } else {
-// //             reject("Something is wrong");
-// //         }
+//         if (!error) {
+//             resolve({username: "Ankit", Email:"royaarayan@gmail.com"});
+//         } else {
+//             reject("Something is wrong");
+//         }
 
-// //     },1000);
-// // });
+//     },1000);
+// });
 
-// // promiseFour
-// // .then(function(user){
-// //     console.log(user);  // actual object print hoga
-// // })
-// // .catch(function(error){
-// //     console.log(error);
-// // });
+// promiseFour
+// .then(function(user){
+//     console.log(user);  // actual object print hoga
+// })
+// .catch(function(error){
+//     console.log(error);
+// });
 
 //  const promiseFour = new Promise(function (resolve, reject) {
 //         setTimeout(function () {
@@ -89,6 +89,8 @@
 //          promiseFour
 //          .then((user) => {
 //         console.log(user.username);
+//         return user.username
+         
         
 //     }).then((username)=>{
 //         console.log((username));
