@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121;">
+    xml http | Method | Kaam |
+    | ------------ | ------------------------------------ |
+    | `open()` | Request type + URL set karta hai |
+    | `send()` | Request bhejta hai |
+    | `onload` | Response aane pe chalega |
+    | `readyState` | Request ka current status batata hai |
+    | `status` | HTTP status code (200, 404 etc.) |
+
+
+</body>
+<script>
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+
+    }
+    xhr.send()
+    console.log("here");
+
+</script>
+
+</html>
