@@ -1,3 +1,4 @@
+//   promise ke under function , set time interval ke under function 
 // const promiseOne = new Promise(function (resolve, reject){
 //     // Do an Async task
 //     // DB calls, API calls, File read or write cryptography
